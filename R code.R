@@ -22,7 +22,7 @@ library(iNEXT.link)   ## Here we only use functions in the package 'iNEXT.link'
 ## load data
 complete_data = read.csv("Data tree-beetle interaction frequency.csv")
 beetles_col_tree = read.tree("Data phylo_tree.txt")
-beetles_col_distM = read.table("Data distance.txt")
+beetles_col_distM = read.table("Data distance matrix.txt")
 
 
 ## transform data into the format of 'iNEXT.link'
