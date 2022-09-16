@@ -206,6 +206,7 @@ Fig5.function = function(coverage) {
   
   pp = c("A","B","C","D","E","F")
   tt = c("G","N","O")
+  
   for(p in 1:6){
     for(t in 1:3){
       tem = filter(complete_data,treatment == tt[t],plot == pp[p])

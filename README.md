@@ -8,11 +8,11 @@ The data used for examples are based on tree-beetle interaction frequency data c
 
 (1) Data Files: 
 
-  (1a) "Data tree-beetle interaction frequency.csv" (for Figure 1 to 5 in the paper): beetle data collected from 2016 to 2019 in six study sites (Plot A−F).
+  (1a) "Data tree-beetle interaction frequency.csv" (for Figure 1 to 5 in the paper): tree-beetle interaction frequencies.
   
-  (1b) "Data phylo_tree.txt" (for Figure 2 and 3): the phylogeny tree for beetle species.
+  (1b) "Data phylo_tree.txt" (for Figure 2 and 3): phylogeny tree for beetle species.
   
-  (1c) "Data distance.txt" (for Figure 2 and 3): the distance matrix data for beetle species.
+  (1c) "Data distance.txt" (for Figure 2 and 3): functional distance between any two beetle species.
 
 (2) "R code.R": Main code for plotting all figures (Figure 1 to 5 in the paper and appendix).
 
