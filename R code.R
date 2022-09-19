@@ -67,7 +67,7 @@ output.est.TD = estimateD.link(woNet_data, q = c(1,2), base = "coverage", level 
 output.iNEXT.TD$iNextEst$coverage_based = rbind(output.iNEXT.TD$iNextEst$coverage_based, 
                                                 output.est.TD %>% select(-"s.e."))
 
-ggiNEXT.TD = ggiNEXT.link(output.iNEXT.TD, diversity = 'TD', facet.var = "Order.q")
+ggiNEXT.TD = ggiNEXT.link(output.iNEXT.TD, facet.var = "Order.q")
 
 size.TD = ggiNEXT.TD[[1]] + 
   scale_colour_manual(values = c('blue', 'red')) +
@@ -90,7 +90,7 @@ output.est.PD = estimateD.link(woNet_data, diversity = "PD", q = c(1,2), base = 
 output.iNEXT.PD$PDiNextEst$coverage_based = rbind(output.iNEXT.PD$PDiNextEst$coverage_based, 
                                                   output.est.PD %>% select(-"s.e."))
 
-ggiNEXT.PD = ggiNEXT.link(output.iNEXT.PD, diversity = 'PD', facet.var = "Order.q")
+ggiNEXT.PD = ggiNEXT.link(output.iNEXT.PD, facet.var = "Order.q")
 
 size.PD = ggiNEXT.PD[[1]] + 
   scale_colour_manual(values = c('blue', 'red')) +
@@ -115,7 +115,7 @@ output.est.FD = estimateD.link(woNet_data, diversity = "FD", q = c(1,2), base = 
 output.iNEXT.FD$AUCiNextEst$coverage_based = rbind(output.iNEXT.FD$AUCiNextEst$coverage_based, 
                                                    output.est.FD %>% select(-'s.e.'))
 
-ggiNEXT.FD = ggiNEXT.link(output.iNEXT.FD, diversity = 'FD', facet.var = "Order.q")
+ggiNEXT.FD = ggiNEXT.link(output.iNEXT.FD, facet.var = "Order.q")
 
 size.FD = ggiNEXT.FD[[1]] + 
   scale_colour_manual(values = c('blue', 'red')) +
@@ -140,7 +140,7 @@ ggsave(filename = 'Figure 3.png', Figure_3, width = 10, height = 16, dpi = 300) 
 ## =========================== Asymptotic & Observed Taxonomic diversity =========================== ##
 AO.TD = AO.link(data = woNet_data, diversity = 'TD', q = seq(0, 2, 0.2), nboot = 100)
 
-ggAO.TD = ggAO.link(AO.TD, diversity = 'TD') + 
+ggAO.TD = ggAO.link(AO.TD) + 
   scale_colour_manual(values = c('blue', 'red')) +
   scale_fill_manual(values = c('blue', 'red')) + 
   ylab("Taxonomic network diversity") +
@@ -153,7 +153,7 @@ ggAO.TD = ggAO.link(AO.TD, diversity = 'TD') +
 ## =========================== Asymptotic & Observed Phylogenetic diversity =========================== ##
 AO.PD = AO.link(data = woNet_data, diversity = 'PD', q = seq(0, 2, 0.2), nboot = 100, col.tree = beetles_col_tree)
 
-ggAO.PD = ggAO.link(AO.PD, diversity = 'PD') + 
+ggAO.PD = ggAO.link(AO.PD) + 
   scale_colour_manual(values = c('blue', 'red')) +
   scale_fill_manual(values = c('blue', 'red')) + 
   ylab("Mean phylogenetic network diversity") +
@@ -166,7 +166,7 @@ ggAO.PD = ggAO.link(AO.PD, diversity = 'PD') +
 ## =========================== Asymptotic & Observed Functional diversity =========================== ##
 AO.FD = AO.link(data = woNet_data, diversity = 'FD', q = seq(0, 2, 0.2), nboot = 100, col.distM = beetles_col_distM)
 
-ggAO.FD = ggAO.link(AO.FD, diversity = 'FD') + 
+ggAO.FD = ggAO.link(AO.FD) + 
   scale_colour_manual(values = c('blue', 'red')) +
   scale_fill_manual(values = c('blue', 'red')) + 
   ylab("Functional network diversity") +
@@ -176,7 +176,7 @@ ggAO.FD = ggAO.link(AO.FD, diversity = 'FD') +
 
 
 Figure_2.TD = (size.TD + coord_cartesian(ylim = c(0,max(AO.TD$qD.UCL))) ) + (ggAO.TD + coord_cartesian(ylim = c(0,max(AO.TD$qD.UCL))) ) + plot_layout(widths = c(2, 1))
-Figure_2.PD = (size.PD + coord_cartesian(ylim = c(0,max(AO.PD$qD.UCL))) ) + (ggAO.PD + coord_cartesian(ylim = c(0,max(AO.PD$qD.UCL))) ) + plot_layout(widths = c(2, 1))
+Figure_2.PD = (size.PD + coord_cartesian(ylim = c(0,max(AO.PD$qPD.UCL))) ) + (ggAO.PD + coord_cartesian(ylim = c(0,max(AO.PD$qPD.UCL))) ) + plot_layout(widths = c(2, 1))
 Figure_2.FD = (size.FD + coord_cartesian(ylim = c(0,64)) ) + (ggAO.FD + coord_cartesian(ylim = c(0,64)) ) + plot_layout(widths = c(2, 1))
 # Figure_2.FD = (size.FD + coord_cartesian(ylim = c(0,100)) ) + (ggAO.FD + coord_cartesian(ylim = c(0,100)) ) + plot_layout(widths = c(2, 1))
 
