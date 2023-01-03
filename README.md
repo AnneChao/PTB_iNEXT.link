@@ -1,6 +1,6 @@
 PTB_iNEXT.link (R code and data for graphics in 2022 Manuscript by Chiu et al.)
 
-R code and data are provided for plotting all figures in the manuscript "Network-diversity quantification and related statistical estimation: drawing on sampling models and methodologies from biodiversity research". Before using the R code, you must download the package "iNEXT.3D", "iNEXT.4steps", "iNEXT.Beta3D", and "iNEXT.link" from Anne Chao's Github.
+R code and data are provided for plotting all figures in the manuscript "Quantifying and estimating ecological network diversity based on incomplete sampling data". Before using the R code, you must download the package "iNEXT.3D", "iNEXT.4steps", "iNEXT.Beta3D", and "iNEXT.link" from Anne Chao's Github.
 
 The data used for examples are based on tree-beetle interaction frequency data collected from 2016 to 2019 in six study sites (Plot A−F) located in the Steigerwald forest, Germany. Taxonomic data were adapted from Vogel et al. (2020); the phylogeny and distance for beetle species were based on Hagge et al. (2021) and Seibold et al. (2015) respectively. 
 
