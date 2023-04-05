@@ -52,7 +52,7 @@ Summary Metrics
 Naming Conventions
 ------------------
 
-* File naming scheme: files with the format ".txt" or ".csv" denote data files; files with the "Environment_output" denote R output after running the code "R_code.R". 
+* File naming scheme: files with the format ".txt" or ".csv" denote data files. 
 
 
 Table of Contents
