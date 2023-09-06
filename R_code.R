@@ -312,7 +312,7 @@ S4.function = function(coverage) {
     names(beetles_data[[i]]) = c('Closed','Net','Open')
     woNet_data_tem = list(Closed = beetles_data[[i]][[1]], Open = beetles_data[[i]][[3]])
     
-    output.Spec = Spec.link(woNet_data_tem, q = c(1,2), E.class = 1, C = coverage, nboot = 0)[[2]]
+    output.Spec = Spec.link(woNet_data_tem, q = c(1,2), E.class = 1, C = coverage, nboot = 0)[[1]]
     output.Spec$Site = paste("plot", c("A", "B", "C", "D", "E", "F")[i])
     output.Spec$Order.q = paste("q =", output.Spec$Order.q, ",  C = ", coverage*100, "%")
     
