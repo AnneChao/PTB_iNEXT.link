@@ -146,8 +146,8 @@ ggsave(filename = 'Figure 5.pdf',
 output.iNEXT.TD = iNEXT.link(data = woNet_data, diversity = 'TD', q = c(0,1,2), nboot = 100)
 output.est.TD = estimateD.link(woNet_data, q = c(1,2), base = "coverage", level = c(0.95,1), nboot = 100)
 
-output.iNEXT.TD$iNextEst$coverage_based = rbind(output.iNEXT.TD$iNextEst$coverage_based, 
-                                                output.est.TD %>% select(-"s.e."))
+output.iNEXT.TD$TDiNextEst$coverage_based = rbind(output.iNEXT.TD$TDiNextEst$coverage_based, 
+                                                  output.est.TD %>% select(-"s.e."))
 
 ggiNEXT.TD = ggiNEXT.link(output.iNEXT.TD, facet.var = "Order.q")
 
@@ -194,8 +194,8 @@ cov.PD = ggiNEXT.PD[[3]] +
 output.iNEXT.FD = iNEXT.link(data = woNet_data, diversity = 'FD', q = c(0,1,2), nboot = 100, col.distM = beetles_col_distM)
 output.est.FD = estimateD.link(woNet_data, diversity = "FD", q = c(1,2), base = "coverage", level = c(0.95,1), nboot = 100, col.distM = beetles_col_distM)
 
-output.iNEXT.FD$AUCiNextEst$coverage_based = rbind(output.iNEXT.FD$AUCiNextEst$coverage_based, 
-                                                   output.est.FD %>% select(-'s.e.'))
+output.iNEXT.FD$FDiNextEst$coverage_based = rbind(output.iNEXT.FD$FDiNextEst$coverage_based, 
+                                                  output.est.FD %>% select(-'s.e.'))
 
 ggiNEXT.FD = ggiNEXT.link(output.iNEXT.FD, facet.var = "Order.q")
 
@@ -257,7 +257,7 @@ ggAO.FD = ggAO.link(AO.FD) +
         text = element_text(size = 16))
 
 
-Figure_6.TD = (size.TD + coord_cartesian(ylim = c(0,max(AO.TD$qD.UCL))) ) + (ggAO.TD + coord_cartesian(ylim = c(0,max(AO.TD$qD.UCL))) ) + plot_layout(widths = c(2, 1))
+Figure_6.TD = (size.TD + coord_cartesian(ylim = c(0,max(AO.TD$qTD.UCL))) ) + (ggAO.TD + coord_cartesian(ylim = c(0,max(AO.TD$qTD.UCL))) ) + plot_layout(widths = c(2, 1))
 Figure_6.PD = (size.PD + coord_cartesian(ylim = c(0,max(AO.PD$qPD.UCL))) ) + (ggAO.PD + coord_cartesian(ylim = c(0,max(AO.PD$qPD.UCL))) ) + plot_layout(widths = c(2, 1))
 Figure_6.FD = (size.FD + coord_cartesian(ylim = c(0,64)) ) + (ggAO.FD + coord_cartesian(ylim = c(0,64)) ) + plot_layout(widths = c(2, 1))
 # Figure_6.FD = (size.FD + coord_cartesian(ylim = c(0,100)) ) + (ggAO.FD + coord_cartesian(ylim = c(0,100)) ) + plot_layout(widths = c(2, 1))

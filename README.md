@@ -45,9 +45,9 @@ Data and File Overview
 Summary Metrics
 ---------------
 
-* File count: 7
-* Total file size: 7.72 MB
-* Range of individual file sizes: 2 KB - 1430 KB
+* File count: 5
+* Total file size: 1.57 MB
+* Range of individual file sizes: 8 KB - 1228 KB
 
 Naming Conventions
 ------------------
