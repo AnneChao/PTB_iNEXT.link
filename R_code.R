@@ -220,9 +220,9 @@ ggsave(filename = 'Figure 7.pdf', Figure_7, width = 10, height = 16, dpi = 1000)
 
 
 ## ================ Figure 6(a2): compute asymptotic & observed taxonomic network diversity =========================== ##
-AO.TD = AO.link(data = woNet_data, diversity = 'TD', q = seq(0, 2, 0.2), nboot = 100)
+AO.TD = ObsAsy.link(data = woNet_data, diversity = 'TD', q = seq(0, 2, 0.2), nboot = 100)
 
-ggAO.TD = ggAO.link(AO.TD) + 
+ggAO.TD = ggObsAsy.link(AO.TD) + 
   scale_colour_manual(values = c('blue', 'red')) +
   scale_fill_manual(values = c('blue', 'red')) + 
   ylab("Taxonomic network diversity") +
@@ -233,9 +233,9 @@ ggAO.TD = ggAO.link(AO.TD) +
 
 
 ## ================== Figure 6(b2): compute asymptotic & observed phylogenetic network diversity =========================== ##
-AO.PD = AO.link(data = woNet_data, diversity = 'PD', q = seq(0, 2, 0.2), nboot = 100, col.tree = beetles_col_tree)
+AO.PD = ObsAsy.link(data = woNet_data, diversity = 'PD', q = seq(0, 2, 0.2), nboot = 100, col.tree = beetles_col_tree)
 
-ggAO.PD = ggAO.link(AO.PD) + 
+ggAO.PD = ggObsAsy.link(AO.PD) + 
   scale_colour_manual(values = c('blue', 'red')) +
   scale_fill_manual(values = c('blue', 'red')) + 
   ylab("Mean phylogenetic network diversity") +
@@ -246,9 +246,9 @@ ggAO.PD = ggAO.link(AO.PD) +
 
 
 ## =============== Figure 6(c2): compute asymptotic & observed functional network diversity ===================== ##
-AO.FD = AO.link(data = woNet_data, diversity = 'FD', q = seq(0, 2, 0.2), nboot = 100, col.distM = beetles_col_distM)
+AO.FD = ObsAsy.link(data = woNet_data, diversity = 'FD', q = seq(0, 2, 0.2), nboot = 100, col.distM = beetles_col_distM)
 
-ggAO.FD = ggAO.link(AO.FD) + 
+ggAO.FD = ggObsAsy.link(AO.FD) + 
   scale_colour_manual(values = c('blue', 'red')) +
   scale_fill_manual(values = c('blue', 'red')) + 
   ylab("Functional network diversity") +
